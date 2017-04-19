@@ -39,6 +39,11 @@
           ·
           = link_to t('about.about_this'), about_more_path
 
+  %h3 Mastodon とは
+
+  %p
+    Mastodon は自由でオープンソースなソーシャルネットワークです。商用プラットフォームの代替となる分散型を採用し、あなたのやりとりが一つの会社によって独占されるのを防ぎます。信頼できるインスタンスを選択してください &mdash; どのインスタンスを選んでも、誰とでもやりとりすることができます。 だれでも自分の Mastodon インスタンスを作ることができ、シームレスにソーシャルネットワークに参加できます。
+
   %h3= t('about.features_headline')
 
   .features-list
@@ -72,8 +77,17 @@
           = t 'about.features.api'
 
   - unless @instance_presenter.site_description.blank?
-    %h3= t('about.description_headline', domain: site_hostname)
+    -#%h3= t('about.description_headline', domain: site_hostname)
+    %h3 ルール
     %p= @instance_presenter.site_description.html_safe
+
+    %h3= t('about_contact')
+    %p
+      = 'Livedonアカウント：　'
+      = link_to '@coolish', '/@coolish'
+　　　　  %br
+      = 'Twitterアカウント：　'
+      = link_to '@coolish_01', 'https://twitter.com/coolish_01'
 
   .actions
     .info
@@ -81,6 +95,6 @@
       ·
       = link_to t('about.apps'), 'https://github.com/tootsuite/documentation/blob/master/Using-Mastodon/Apps.md'
       ·
-      = link_to t('about.source_code'), 'https://github.com/tootsuite/mastodon'
+      = link_to t('about.source_code'), 'https://github.com/coolish/mastodon'
       ·
       = link_to t('about.other_instances'), 'https://github.com/tootsuite/documentation/blob/master/Using-Mastodon/List-of-Mastodon-instances.md'
